@@ -60,8 +60,24 @@
               class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"
             ></span>
           </a>
-          <a href="#tools" class="text-gray-400 hover:text-gray-200 transition-colors">Tools</a>
-          <a href="#contact" class="text-gray-400 hover:text-gray-200 transition-colors">Contact</a>
+          <a
+            href="#tools"
+            class="relative text-gray-400 hover:text-gray-200 transition-colors group"
+          >
+            Tools
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="relative text-gray-400 hover:text-gray-200 transition-colors group"
+          >
+            Contact
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"
+            ></span>
+          </a>
         </div>
 
         <!-- Profile Picture -->
