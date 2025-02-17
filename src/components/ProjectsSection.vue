@@ -100,7 +100,7 @@ const projects = [
     technologies: ['Express.js', 'Node.js', 'MongoDB', 'TailwindCSS', 'EJS'],
     github: 'https://github.com/jkdevio/Medium-Clone',
     demo: 'https://mediumclone.up.railway.app',
-    image: '/images/img.png',
+    image: '/images/img1.png',
   },
   {
     name: 'Personal Portfolio',
@@ -108,7 +108,7 @@ const projects = [
     technologies: ['Vue.js', 'TailwindCss', 'Vite', 'Node.js'],
     github: 'https://github.com/jkdevio/my-portfolio',
     demo: 'https://jkdevio-portfolio.vercel.app',
-    image: '/images/img.png',
+    image: '/images/img2.png',
   },
   // {
   //   name: 'MovieDB',
