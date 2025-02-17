@@ -107,7 +107,7 @@ const projects = [
     description: 'My Personal Portfolio Website',
     technologies: ['Vue.js', 'TailwindCss', 'Vite', 'Node.js'],
     github: 'https://github.com/jkdevio/my-portfolio',
-    demo: 'https://jkdevio.vercel.app',
+    demo: 'https://jkdevio-portfolio.vercel.app',
     image: '/images/img.png',
   },
   // {
