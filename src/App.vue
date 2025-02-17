@@ -17,9 +17,9 @@ import TheFooter from '@/components/TheFooter.vue'
       <TheHeader />
       <main class="max-w-[1200px] mx-auto">
         <TheHero />
-        <ExperienceSection />
         <ProjectsSection />
         <ToolsSection />
+        <ExperienceSection />
         <ContactSection />
       </main>
       <TheFooter />
