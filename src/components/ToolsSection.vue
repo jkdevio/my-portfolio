@@ -43,14 +43,54 @@
 import { ref } from 'vue'
 
 const tools = ref([
-  { name: 'Vue.js', icon: '/icons/vue.svg', type: 'Frontend', isAnimating: false },
-  { name: 'React', icon: '/icons/react.svg', type: 'Frontend', isAnimating: false },
-  { name: 'Node.js', icon: '/icons/nodejs.svg', type: 'Backend', isAnimating: false },
-  { name: 'TypeScript', icon: '/icons/typescript.svg', type: 'Language', isAnimating: false },
-  { name: 'MongoDB', icon: '/icons/mongodb.svg', type: 'Database', isAnimating: false },
-  { name: 'Docker', icon: '/icons/docker.svg', type: 'DevOps', isAnimating: false },
-  { name: 'AWS', icon: '/icons/aws.svg', type: 'Cloud', isAnimating: false },
-  { name: 'Git', icon: '/icons/git.svg', type: 'Version Control', isAnimating: false },
+  {
+    name: 'Vue.js',
+    icon: 'https://img.icons8.com/color/48/vue-js.png',
+    type: 'Frontend',
+    isAnimating: false,
+  },
+  {
+    name: 'React',
+    icon: 'https://img.icons8.com/color/48/react-native.png',
+    type: 'Frontend',
+    isAnimating: false,
+  },
+  {
+    name: 'Node.js',
+    icon: 'https://img.icons8.com/fluency/48/node-js.png',
+    type: 'Backend',
+    isAnimating: false,
+  },
+  {
+    name: 'JavaScript',
+    icon: 'https://img.icons8.com/color/48/javascript.png',
+    type: 'Language',
+    isAnimating: false,
+  },
+  {
+    name: 'MongoDB',
+    icon: 'https://img.icons8.com/color/48/mongo-db.png',
+    type: 'Database',
+    isAnimating: false,
+  },
+  {
+    name: 'Tailwind Css',
+    icon: 'https://img.icons8.com/fluency/48/tailwind_css.png',
+    type: 'Framework',
+    isAnimating: false,
+  },
+  {
+    name: 'AWS',
+    icon: 'https://img.icons8.com/color/48/amazon-web-services.png',
+    type: 'Cloud',
+    isAnimating: false,
+  },
+  {
+    name: 'Git',
+    icon: 'https://img.icons8.com/color/48/git.png',
+    type: 'Version Control',
+    isAnimating: false,
+  },
   // Add more tools as needed
 ])
 
