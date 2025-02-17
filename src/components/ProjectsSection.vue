@@ -22,7 +22,7 @@
         <!-- Card Top -->
         <div class="relative h-64 overflow-hidden">
           <img
-            src="/images/img.png"
+            :src="project.image"
             :alt="project.name"
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -95,32 +95,34 @@
 <script setup>
 const projects = [
   {
-    name: 'IntenseProxy',
-    description: 'Secure proxy solution with authentication, dashboard and dynamic features.',
-    technologies: ['Vue.js', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/yourusername/intense-proxy',
-    demo: 'https://intense-proxy.demo.com',
+    name: 'Medium',
+    description: 'A Full Stack Blogging Platform',
+    technologies: ['Express.js', 'Node.js', 'MongoDB', 'TailwindCSS', 'EJS'],
+    github: 'https://github.com/jkdevio/Medium-Clone',
+    demo: 'https://mediumclone.up.railway.app',
+    image: '/images/medium-clone.jpg',
   },
   {
-    name: 'SAAVE Coin',
-    description: 'DeFi platform built with modern blockchain technologies.',
-    technologies: ['React', 'Solidity', 'Web3.js'],
-    github: 'https://github.com/yourusername/saave-coin',
-    demo: 'https://saave-coin.demo.com',
+    name: 'Personal Portfolio',
+    description: 'My Personal Portfolio Website',
+    technologies: ['Vue.js', 'TailwindCss', 'Vite', 'Node.js'],
+    github: 'https://github.com/jkdevio/my-portfolio',
+    demo: 'https://jkdevio.vercel.app',
+    image: '/images/portfolio.jpg',
   },
-  {
-    name: 'MovieDB',
-    description: 'Movie database application with real-time updates and recommendations.',
-    technologies: ['Vue.js', 'Firebase', 'TailwindCSS'],
-    github: 'https://github.com/yourusername/movie-db',
-    demo: 'https://movie-db.demo.com',
-  },
-  {
-    name: 'GitProfile',
-    description: 'GitHub profile analyzer and statistics visualization tool.',
-    technologies: ['TypeScript', 'GitHub API', 'Chart.js'],
-    github: 'https://github.com/yourusername/git-profile',
-    demo: 'https://git-profile.demo.com',
-  },
+  // {
+  //   name: 'MovieDB',
+  //   description: 'Movie database application with real-time updates and recommendations.',
+  //   technologies: ['Vue.js', 'Firebase', 'TailwindCSS'],
+  //   github: 'https://github.com/yourusername/movie-db',
+  //   demo: 'https://movie-db.demo.com',
+  // },
+  // {
+  //   name: 'GitProfile',
+  //   description: 'GitHub profile analyzer and statistics visualization tool.',
+  //   technologies: ['TypeScript', 'GitHub API', 'Chart.js'],
+  //   github: 'https://github.com/yourusername/git-profile',
+  //   demo: 'https://git-profile.demo.com',
+  // },
 ]
 </script>
