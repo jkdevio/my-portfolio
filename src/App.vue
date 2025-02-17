@@ -1,9 +1,10 @@
 <script setup>
-import { RouterView } from 'vue-router'
 import TheHeader from '@/components/TheHeader.vue'
 import TheHero from '@/components/TheHero.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
 import ProjectsSection from '@/components/ProjectsSection.vue'
+import ToolsSection from '@/components/ToolsSection.vue'
+import ContactSection from '@/components/ContactSection.vue'
 import TheFooter from '@/components/TheFooter.vue'
 </script>
 
@@ -14,6 +15,8 @@ import TheFooter from '@/components/TheFooter.vue'
       <TheHero />
       <ExperienceSection />
       <ProjectsSection />
+      <ToolsSection />
+      <ContactSection />
     </main>
     <TheFooter />
   </div>
