@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 px-4 sm:px-6" id="tools">
     <h2
-      class="text-xl sm:text-2xl font-bold mb-8 uppercase text-gray-200 text-center"
+      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
@@ -17,7 +17,9 @@
       <div
         v-for="tool in tools"
         :key="tool.name"
-        class="group bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300"
+        class="group bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300 cursor-pointer active:scale-95"
+        :class="tool.isAnimating ? 'animate-wiggle' : ''"
+        @click="animateTool(tool)"
       >
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center">
@@ -38,15 +40,48 @@
 </template>
 
 <script setup>
-const tools = [
-  { name: 'Vue.js', icon: '/icons/vue.svg', type: 'Frontend' },
-  { name: 'React', icon: '/icons/react.svg', type: 'Frontend' },
-  { name: 'Node.js', icon: '/icons/nodejs.svg', type: 'Backend' },
-  { name: 'TypeScript', icon: '/icons/typescript.svg', type: 'Language' },
-  { name: 'MongoDB', icon: '/icons/mongodb.svg', type: 'Database' },
-  { name: 'Docker', icon: '/icons/docker.svg', type: 'DevOps' },
-  { name: 'AWS', icon: '/icons/aws.svg', type: 'Cloud' },
-  { name: 'Git', icon: '/icons/git.svg', type: 'Version Control' },
+import { ref } from 'vue'
+
+const tools = ref([
+  { name: 'Vue.js', icon: '/icons/vue.svg', type: 'Frontend', isAnimating: false },
+  { name: 'React', icon: '/icons/react.svg', type: 'Frontend', isAnimating: false },
+  { name: 'Node.js', icon: '/icons/nodejs.svg', type: 'Backend', isAnimating: false },
+  { name: 'TypeScript', icon: '/icons/typescript.svg', type: 'Language', isAnimating: false },
+  { name: 'MongoDB', icon: '/icons/mongodb.svg', type: 'Database', isAnimating: false },
+  { name: 'Docker', icon: '/icons/docker.svg', type: 'DevOps', isAnimating: false },
+  { name: 'AWS', icon: '/icons/aws.svg', type: 'Cloud', isAnimating: false },
+  { name: 'Git', icon: '/icons/git.svg', type: 'Version Control', isAnimating: false },
   // Add more tools as needed
-]
+])
+
+const animateTool = (tool) => {
+  tool.isAnimating = true
+  setTimeout(() => {
+    tool.isAnimating = false
+  }, 500) // Duration matches the animation
+}
 </script>
+
+<style>
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-3deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(3deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-3deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+</style>
