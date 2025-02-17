@@ -1,5 +1,6 @@
 <script setup>
 import TheHeader from '@/components/TheHeader.vue'
+import IntroSection from '@/components/IntroSection.vue'
 import TheHero from '@/components/TheHero.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
 import ProjectsSection from '@/components/ProjectsSection.vue'
@@ -16,6 +17,7 @@ import TheFooter from '@/components/TheFooter.vue'
     <div class="relative">
       <TheHeader />
       <main class="max-w-[1200px] mx-auto">
+        <IntroSection />
         <TheHero />
         <ProjectsSection />
         <ToolsSection />
