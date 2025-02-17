@@ -83,7 +83,7 @@ const experiences = [
   {
     company: 'ITOH MEDCARE UK',
     role: 'Full Stack Developer',
-    duration: '2022 - Present',
+    duration: '2024 - Present',
     description: [
       'Led the development of a high-performance web application for a healthcare company for keeping track of their patients and their medical records.',
     ],
