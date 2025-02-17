@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 px-4 sm:px-6" id="projects">
     <h2
-      class="text-xl sm:text-2xl font-bold mb-8 uppercase text-gray-200 text-center"
+      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
@@ -9,27 +9,42 @@
       Featured Projects
     </h2>
     <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-6"
+      class="grid grid-cols-1 md:grid-cols-2 gap-8"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0, delay: 200 }"
     >
-      <div v-for="project in projects" :key="project.name" class="group">
-        <div class="relative overflow-hidden rounded-lg mb-4">
+      <div
+        v-for="project in projects"
+        :key="project.name"
+        class="group relative bg-[#1A1A1A] rounded-xl overflow-hidden"
+      >
+        <!-- Card Top -->
+        <div class="relative h-64 overflow-hidden">
           <img
             src="/images/img.png"
             :alt="project.name"
-            class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div
-            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-          >
-            <div class="flex gap-4">
+            class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-90"
+          ></div>
+        </div>
+
+        <!-- Card Content -->
+        <div class="relative p-6 -mt-20 z-10">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-medium text-gray-100">{{ project.name }}</h3>
+            <div
+              class="flex gap-3 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+            >
               <a
                 v-if="project.github"
                 :href="project.github"
                 target="_blank"
-                class="p-2 rounded-full bg-gray-900/80 text-gray-200 hover:bg-gray-900 transition-colors"
+                rel="noopener noreferrer"
+                class="p-2 rounded-lg bg-gray-800/50 text-gray-400 hover:text-purple-400 hover:bg-gray-800/80 transform hover:-translate-y-1 transition-all duration-300"
+                title="View Source Code"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path
@@ -41,7 +56,9 @@
                 v-if="project.demo"
                 :href="project.demo"
                 target="_blank"
-                class="p-2 rounded-full bg-gray-900/80 text-gray-200 hover:bg-gray-900 transition-colors"
+                rel="noopener noreferrer"
+                class="p-2 rounded-lg bg-gray-800/50 text-gray-400 hover:text-blue-400 hover:bg-gray-800/80 transform hover:-translate-y-1 transition-all duration-300"
+                title="View Live Demo"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path
@@ -54,22 +71,22 @@
               </a>
             </div>
           </div>
-        </div>
-        <div class="space-y-2">
-          <div class="flex items-start justify-between">
-            <h3 class="text-lg font-medium text-gray-200">{{ project.name }}</h3>
-          </div>
-          <p class="text-sm text-gray-400">{{ project.description }}</p>
+          <p class="text-sm text-gray-400 mb-4 line-clamp-2">{{ project.description }}</p>
           <div class="flex flex-wrap gap-2">
             <span
               v-for="tech in project.technologies"
               :key="tech"
-              class="text-xs text-gray-400 px-2 py-1 rounded bg-[#1E1E1E]"
+              class="text-xs font-medium text-gray-400 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50"
             >
               {{ tech }}
             </span>
           </div>
         </div>
+
+        <!-- Hover Overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        ></div>
       </div>
     </div>
   </section>
@@ -81,29 +98,29 @@ const projects = [
     name: 'IntenseProxy',
     description: 'Secure proxy solution with authentication, dashboard and dynamic features.',
     technologies: ['Vue.js', 'Node.js', 'MongoDB'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/yourusername/intense-proxy',
+    demo: 'https://intense-proxy.demo.com',
   },
   {
     name: 'SAAVE Coin',
     description: 'DeFi platform built with modern blockchain technologies.',
     technologies: ['React', 'Solidity', 'Web3.js'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/yourusername/saave-coin',
+    demo: 'https://saave-coin.demo.com',
   },
   {
     name: 'MovieDB',
     description: 'Movie database application with real-time updates and recommendations.',
     technologies: ['Vue.js', 'Firebase', 'TailwindCSS'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/yourusername/movie-db',
+    demo: 'https://movie-db.demo.com',
   },
   {
     name: 'GitProfile',
     description: 'GitHub profile analyzer and statistics visualization tool.',
     technologies: ['TypeScript', 'GitHub API', 'Chart.js'],
-    github: 'https://github.com',
-    demo: 'https://demo.com',
+    github: 'https://github.com/yourusername/git-profile',
+    demo: 'https://git-profile.demo.com',
   },
 ]
 </script>
