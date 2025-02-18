@@ -8,7 +8,7 @@
     </div>
 
     <h2
-      class="relative text-4xl sm:text-5xl font-thin mb-24 text-center"
+      class="relative text-4xl sm:text-5xl font-thin mb-16 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
@@ -25,7 +25,7 @@
     </h2>
 
     <p
-      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 text-sm leading-relaxed"
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 mb-16 text-sm leading-relaxed"
       v-motion
       :initial="{ opacity: 0, y: 20 }"
       :enter="{ opacity: 1, y: 0, delay: 200 }"
@@ -102,15 +102,15 @@
 
         <!-- Project Info -->
         <div
-          class="w-full md:w-1/2 p-8 bg-card/50 backdrop-blur-sm rounded-xl border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 group-hover:translate-y-[-2px]"
+          class="w-full md:w-1/2 p-10 bg-card/50 backdrop-blur-sm rounded-xl border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 group-hover:translate-y-[-2px]"
         >
-          <div class="space-y-6">
+          <div class="space-y-8">
             <!-- Project Header -->
             <div class="flex flex-wrap items-center gap-3">
               <span class="text-xs font-light text-accent-light/60 tracking-widest">
                 Featured Project {{ String(index + 1).padStart(2, '0') }}
               </span>
-              <h3 class="text-2xl font-light text-accent-light tracking-wide w-full mt-2">
+              <h3 class="text-2xl font-light text-accent-light tracking-wide w-full mt-4">
                 {{ project.name }}
               </h3>
             </div>
@@ -121,7 +121,7 @@
             </p>
 
             <!-- Technologies -->
-            <div class="flex flex-wrap gap-2 pt-4">
+            <div class="flex flex-wrap gap-2 pt-6">
               <span
                 v-for="tech in project.technologies"
                 :key="tech"

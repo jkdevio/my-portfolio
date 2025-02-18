@@ -1,7 +1,7 @@
 <template>
   <section class="py-16 px-4 sm:px-6" id="tools">
     <h2
-      class="relative text-4xl sm:text-5xl font-thin mb-24 text-center"
+      class="relative text-4xl sm:text-5xl font-thin mb-16 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
@@ -15,7 +15,7 @@
       </span>
     </h2>
     <p
-      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 text-sm leading-relaxed"
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 mb-16 text-sm leading-relaxed"
       v-motion
       :initial="{ opacity: 0, y: 20 }"
       :enter="{ opacity: 1, y: 0, delay: 200 }"
