@@ -19,13 +19,13 @@
         <!-- Main Title -->
         <div class="overflow-hidden">
           <h1
-            class="text-[clamp(2.5rem,15vw,13rem)] font-extrabold leading-none tracking-tight"
+            class="text-[clamp(3.5rem,15vw,13rem)] font-extrabold leading-none tracking-tight"
             v-motion
             :initial="{ opacity: 0, y: 100 }"
             :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"
           >
             <span
-              class="block text-accent-dark/90 select-none mb-4 hover:scale-105 transition-all duration-500 hover:text-accent-light/10"
+              class="block text-accent-dark/90 select-none mb-6 hover:scale-105 transition-all duration-500 hover:text-accent-light/10"
             >
               Software
             </span>

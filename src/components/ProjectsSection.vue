@@ -1,50 +1,62 @@
 <template>
-  <section class="py-16 px-4 sm:px-6" id="projects">
+  <section class="py-24 px-4 sm:px-6 relative" id="projects">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute w-[800px] h-[800px] bg-accent-light/[0.01] rounded-full blur-3xl left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+      ></div>
+    </div>
+
     <h2
-      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
+      class="text-3xl sm:text-4xl font-light mb-16 text-accent-light text-center tracking-tight"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
     >
       Featured Projects
     </h2>
+
     <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-8"
+      class="grid grid-cols-1 gap-24 max-w-6xl mx-auto"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0, delay: 200 }"
     >
       <div
-        v-for="project in projects"
+        v-for="(project, index) in projects"
         :key="project.name"
-        class="group relative bg-card hover:bg-card-hover rounded-xl overflow-hidden border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500"
+        class="group relative even:md:flex-row-reverse"
+        v-motion
+        :initial="{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }"
+        :enter="{ opacity: 1, x: 0, delay: index * 200 }"
       >
-        <!-- Card Top -->
-        <div class="relative h-64 overflow-hidden">
-          <img
-            :src="project.image"
-            :alt="project.name"
-            class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0 grayscale"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-90"
-          ></div>
-        </div>
-
-        <!-- Card Content -->
-        <div class="relative p-6 -mt-20 z-10">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-medium text-gray-100">{{ project.name }}</h3>
+        <!-- Project Content -->
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <!-- Image Container -->
+          <div class="w-full md:w-7/12 relative aspect-video rounded-xl overflow-hidden">
+            <!-- Project Number -->
+            <span
+              class="absolute top-4 left-4 text-xs font-light text-accent-muted opacity-60 tracking-widest"
+            >
+              Featured Project {{ String(index + 1).padStart(2, '0') }}
+            </span>
+            <img
+              :src="project.image"
+              :alt="project.name"
+              class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+            />
             <div
-              class="flex gap-3 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"
+            ></div>
+            <!-- Project Links -->
+            <div
+              class="absolute bottom-4 right-4 flex gap-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700"
             >
               <a
                 v-if="project.github"
                 :href="project.github"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="p-2 rounded-lg bg-gray-800/50 text-gray-400 hover:text-purple-400 hover:bg-gray-800/80 transform hover:-translate-y-1 transition-all duration-300"
-                title="View Source Code"
+                class="p-3 rounded-lg bg-card/80 backdrop-blur-sm text-accent-muted hover:text-accent-light hover:scale-110 transition-all duration-300"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path
@@ -56,9 +68,7 @@
                 v-if="project.demo"
                 :href="project.demo"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="p-2 rounded-lg bg-gray-800/50 text-gray-400 hover:text-blue-400 hover:bg-gray-800/80 transform hover:-translate-y-1 transition-all duration-300"
-                title="View Live Demo"
+                class="p-3 rounded-lg bg-card/80 backdrop-blur-sm text-accent-muted hover:text-accent-light hover:scale-110 transition-all duration-300"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path
@@ -71,22 +81,32 @@
               </a>
             </div>
           </div>
-          <p class="text-sm text-gray-400 mb-4 line-clamp-2">{{ project.description }}</p>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="tech in project.technologies"
-              :key="tech"
-              class="text-xs font-medium text-accent-muted px-3 py-1 rounded-full bg-accent-dark/10 border border-accent-light/5 hover:border-accent-light/10 hover:text-accent-light transition-all duration-300"
+
+          <!-- Project Info -->
+          <div class="w-full md:w-5/12 space-y-6">
+            <div class="flex justify-between items-start mb-4">
+              <h3
+                class="text-3xl font-light text-accent-light tracking-wide group-hover:text-white transition-all duration-300"
+              >
+                {{ project.name }}
+              </h3>
+            </div>
+            <div
+              class="bg-card/50 backdrop-blur-sm p-6 rounded-lg border border-accent-dark/10 group-hover:border-accent-light/10 transition-all duration-500"
             >
-              {{ tech }}
-            </span>
+              <p class="text-accent-muted leading-relaxed">{{ project.description }}</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="tech in project.technologies"
+                :key="tech"
+                class="text-xs font-light text-accent-muted px-4 py-2 rounded-full bg-accent-dark/5 border border-accent-dark/10 hover:border-accent-light/10 hover:text-accent-light hover:translate-y-[-2px] transition-all duration-300"
+              >
+                {{ tech }}
+              </span>
+            </div>
           </div>
         </div>
-
-        <!-- Hover Overlay -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
-        ></div>
       </div>
     </div>
   </section>
