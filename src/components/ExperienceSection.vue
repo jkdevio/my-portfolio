@@ -21,12 +21,12 @@
       >
         <!-- Timeline Line -->
         <div
-          class="absolute top-0 left-8 bottom-0 w-px bg-gray-800 group-last:bg-gradient-to-b group-last:from-gray-800 group-last:to-transparent"
+          class="absolute top-0 left-8 bottom-0 w-px bg-accent-dark/20 group-last:bg-gradient-to-b group-last:from-accent-dark/20 group-last:to-transparent"
         ></div>
 
         <!-- Timeline Dot -->
         <div
-          class="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-purple-500 bg-[#1A1A1A] z-10"
+          class="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full border border-accent-light/20 bg-card group-hover:border-accent-light/40 transition-all duration-500 z-10"
         ></div>
 
         <!-- Content Card -->
@@ -44,7 +44,7 @@
 
           <!-- Description -->
           <div
-            class="bg-[#1A1A1A] rounded-xl p-6 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300"
+            class="bg-card hover:bg-card-hover rounded-xl p-6 border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 group-hover:translate-y-[-2px]"
           >
             <ul class="space-y-3">
               <li
