@@ -1,71 +1,104 @@
 <template>
-  <section class="py-16 px-4 sm:px-6" id="experience">
+  <section class="py-24 px-4 sm:px-6 relative" id="experience">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute w-[500px] h-[500px] bg-accent-light/[0.02] rounded-full blur-3xl -right-64 -top-32"
+      ></div>
+      <div
+        class="absolute w-[500px] h-[500px] bg-accent-light/[0.02] rounded-full blur-3xl -left-64 -bottom-32"
+      ></div>
+    </div>
+
     <h2
-      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
+      class="relative text-4xl sm:text-5xl font-thin mb-16 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
     >
-      Work Experience
+      <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4"
+        >EXPERIENCE</span
+      >
+      <span class="text-accent-light relative">
+        Career Journey
+        <span
+          class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+        ></span>
+      </span>
     </h2>
-    <div
-      class="max-w-3xl mx-auto"
+
+    <p
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 mb-16 text-sm leading-relaxed"
       v-motion
-      :initial="{ opacity: 0, y: 100 }"
+      :initial="{ opacity: 0, y: 20 }"
       :enter="{ opacity: 1, y: 0, delay: 200 }"
     >
+      A timeline of my professional journey, highlighting key roles and achievements. Each position
+      has contributed to my growth as a developer and problem solver.
+    </p>
+
+    <div class="max-w-3xl mx-auto">
       <div
         v-for="(experience, index) in experiences"
         :key="index"
-        class="group relative mb-12 last:mb-0"
+        class="group relative mb-16 last:mb-0 hover:translate-x-1 transition-all duration-500"
+        v-motion
+        :initial="{ opacity: 0, x: -50 }"
+        :enter="{ opacity: 1, x: 0, delay: index * 200 }"
       >
         <!-- Timeline Line -->
         <div
-          class="absolute top-0 left-8 bottom-0 w-px bg-gray-800 group-last:bg-gradient-to-b group-last:from-gray-800 group-last:to-transparent"
+          class="absolute top-0 left-8 bottom-0 w-px bg-accent-dark/20 group-last:bg-gradient-to-b group-last:from-accent-dark/20 group-last:to-transparent"
         ></div>
 
         <!-- Timeline Dot -->
         <div
-          class="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-purple-500 bg-[#1A1A1A] z-10"
+          class="absolute left-8 -translate-x-1/2 w-3 h-3 rounded-full bg-accent-light/20 group-hover:bg-accent-light/40 group-hover:scale-150 transition-all duration-500"
         ></div>
 
-        <!-- Content Card -->
+        <!-- Content -->
         <div class="ml-16 relative">
-          <!-- Company & Duration -->
           <div class="flex flex-wrap items-center gap-3 mb-2">
-            <h3 class="text-lg font-medium text-gray-200">{{ experience.company }}</h3>
-            <span class="text-sm text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full">
+            <h3 class="text-xl font-light text-accent-light tracking-wide">
+              {{ experience.company }}
+            </h3>
+            <span
+              class="text-sm text-accent-muted px-3 py-1 rounded-full border border-accent-dark/10 group-hover:border-accent-light/10 transition-all duration-500"
+            >
               {{ experience.duration }}
             </span>
           </div>
 
-          <!-- Role -->
-          <h4 class="text-base text-purple-400 mb-4">{{ experience.role }}</h4>
+          <h4 class="text-base text-accent-muted mb-4 font-light tracking-wide">
+            {{ experience.role }}
+          </h4>
 
-          <!-- Description -->
+          <!-- Description Card -->
           <div
-            class="bg-[#1A1A1A] rounded-xl p-6 border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300"
+            class="bg-card/50 backdrop-blur-sm hover:bg-card-hover rounded-xl p-8 border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 group-hover:translate-y-[-2px]"
           >
-            <ul class="space-y-3">
+            <ul class="space-y-4">
               <li
                 v-for="(point, pointIndex) in experience.description"
                 :key="pointIndex"
-                class="flex gap-3 text-sm text-gray-400 leading-relaxed group/item"
+                class="flex gap-3 text-sm text-accent-muted leading-relaxed group/item"
               >
-                <span class="text-purple-500/50 group-hover/item:text-purple-500 transition-colors"
-                  >▹</span
+                <span
+                  class="text-accent-light/30 group-hover/item:text-accent-light transition-all duration-300"
                 >
+                  ▹
+                </span>
                 {{ point }}
               </li>
             </ul>
 
-            <!-- Technologies Used -->
-            <div class="mt-6 pt-6 border-t border-gray-800/50">
+            <!-- Technologies -->
+            <div class="mt-8 pt-8 border-t border-accent-dark/10">
               <div class="flex flex-wrap gap-2">
                 <span
                   v-for="tech in experience.technologies"
                   :key="tech"
-                  class="text-xs font-medium text-gray-400 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50"
+                  class="text-xs font-light text-accent-muted px-3 py-1 rounded-full bg-accent-dark/5 border border-accent-dark/10 hover:border-accent-light/10 hover:text-accent-light transition-all duration-300"
                 >
                   {{ tech }}
                 </span>

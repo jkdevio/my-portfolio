@@ -1,28 +1,57 @@
 <template>
-  <section class="py-16 px-4 sm:px-6" id="contact">
+  <section class="py-24 px-4 sm:px-6 relative" id="contact">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute w-[800px] h-[800px] bg-accent-light/[0.01] rounded-full blur-3xl left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+      ></div>
+    </div>
+
     <div class="max-w-[1200px] mx-auto">
       <h2
-        class="text-xl sm:text-2xl font-bold mb-8 uppercase text-gray-200 text-center"
+        class="relative text-4xl sm:text-5xl font-thin mb-16 text-center"
         v-motion
         :initial="{ opacity: 0, y: 100 }"
         :enter="{ opacity: 1, y: 0 }"
       >
-        Contact
+        <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4"
+          >CONTACT</span
+        >
+        <span class="text-accent-light relative">
+          Let's Connect
+          <span
+            class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+          ></span>
+        </span>
       </h2>
+
+      <p
+        class="max-w-2xl mx-auto text-center text-accent-muted mb-16 leading-relaxed"
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{ opacity: 1, y: 0, delay: 200 }"
+      >
+        I'm always interested in hearing about new opportunities and connecting with fellow
+        developers. Whether you want to discuss a project or just say hello, feel free to reach out!
+      </p>
+
       <div
-        class="flex justify-center items-center gap-4 overflow-x-auto pb-4 snap-x"
+        class="flex justify-center items-center gap-6 flex-wrap"
         v-motion
         :initial="{ opacity: 0, y: 100 }"
-        :enter="{ opacity: 1, y: 0, delay: 200 }"
+        :enter="{ opacity: 1, y: 0, delay: 400 }"
       >
         <a
           v-for="link in socialLinks"
           :key="link.name"
           :href="link.url"
           target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded border border-gray-800 text-gray-400 hover:text-gray-200 hover:border-gray-700 transition-colors whitespace-nowrap snap-start"
+          class="group flex items-center gap-3 px-5 py-3 rounded-lg bg-card/50 backdrop-blur-sm border border-accent-dark/10 hover:border-accent-light/10 text-accent-muted hover:text-accent-light transition-all duration-500 hover:translate-y-[-2px]"
         >
-          <component :is="link.icon" class="w-5 h-5" />
+          <component
+            :is="link.icon"
+            class="w-5 h-5 opacity-60 group-hover:opacity-100 transition-all duration-500"
+          />
           {{ link.name }}
         </a>
       </div>

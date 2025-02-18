@@ -1,13 +1,28 @@
 <template>
   <section class="py-16 px-4 sm:px-6" id="tools">
     <h2
-      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
+      class="relative text-4xl sm:text-5xl font-thin mb-16 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
     >
-      Technologies & Tools
+      <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4">STACK</span>
+      <span class="text-accent-light relative">
+        Technologies & Tools
+        <span
+          class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+        ></span>
+      </span>
     </h2>
+    <p
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 mb-16 text-sm leading-relaxed"
+      v-motion
+      :initial="{ opacity: 0, y: 20 }"
+      :enter="{ opacity: 1, y: 0, delay: 200 }"
+    >
+      The technologies and tools I use to bring ideas to life. My stack is constantly evolving as I
+      explore new ways to create better solutions.
+    </p>
     <div
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
       v-motion
@@ -17,21 +32,27 @@
       <div
         v-for="tool in tools"
         :key="tool.name"
-        class="group bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300 cursor-pointer active:scale-95"
+        class="group bg-card hover:bg-card-hover p-4 rounded-xl border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 hover:translate-y-[-2px]"
         :class="tool.isAnimating ? 'animate-wiggle' : ''"
         @click="animateTool(tool)"
       >
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center">
+          <div
+            class="w-10 h-10 rounded-lg bg-accent-dark/10 flex items-center justify-center group-hover:bg-accent-dark/20 transition-all duration-500"
+          >
             <img :src="tool.icon" :alt="tool.name" class="w-6 h-6" />
           </div>
           <div>
             <span
-              class="text-sm font-medium text-gray-300 group-hover:text-gray-100 transition-colors"
+              class="text-sm font-medium text-accent-muted group-hover:text-accent-light transition-all duration-300"
             >
               {{ tool.name }}
             </span>
-            <span class="block text-xs text-gray-500">{{ tool.type }}</span>
+            <span
+              class="block text-xs text-accent-dark group-hover:text-accent-muted transition-all duration-300"
+            >
+              {{ tool.type }}
+            </span>
           </div>
         </div>
       </div>

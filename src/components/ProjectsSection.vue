@@ -1,50 +1,79 @@
 <template>
-  <section class="py-16 px-4 sm:px-6" id="projects">
+  <section class="py-24 px-4 sm:px-6 relative" id="projects">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div
+        class="absolute w-[800px] h-[800px] bg-accent-light/[0.01] rounded-full blur-3xl left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
+      ></div>
+    </div>
+
     <h2
-      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
+      class="relative text-4xl sm:text-5xl font-thin mb-16 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
     >
-      Featured Projects
+      <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4"
+        >SHOWCASE</span
+      >
+      <span class="text-accent-light relative">
+        Featured Projects
+        <span
+          class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+        ></span>
+      </span>
     </h2>
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 gap-8"
+
+    <p
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 mb-16 text-sm leading-relaxed"
       v-motion
-      :initial="{ opacity: 0, y: 100 }"
+      :initial="{ opacity: 0, y: 20 }"
       :enter="{ opacity: 1, y: 0, delay: 200 }"
     >
-      <div
-        v-for="project in projects"
-        :key="project.name"
-        class="group relative bg-[#1A1A1A] rounded-xl overflow-hidden"
-      >
-        <!-- Card Top -->
-        <div class="relative h-64 overflow-hidden">
-          <img
-            :src="project.image"
-            :alt="project.name"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-90"
-          ></div>
-        </div>
+      A showcase of my recent work, featuring full-stack applications and innovative solutions. Each
+      project represents a unique challenge and demonstrates my commitment to clean code and user
+      experience.
+    </p>
 
-        <!-- Card Content -->
-        <div class="relative p-6 -mt-20 z-10">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-medium text-gray-100">{{ project.name }}</h3>
+    <div class="relative max-w-6xl mx-auto">
+      <!-- Vertical Timeline Line -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-px bg-accent-dark/20 hidden md:block"></div>
+
+      <div
+        v-for="(project, index) in projects"
+        :key="project.name"
+        class="group relative mb-32 last:mb-0 md:flex items-center gap-16"
+        :class="index % 2 === 0 ? '' : 'flex-row-reverse'"
+        v-motion
+        :initial="{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }"
+        :enter="{ opacity: 1, x: 0, delay: index * 200 }"
+      >
+        <!-- Timeline Dot -->
+        <div
+          class="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent-light/20 group-hover:bg-accent-light/40 group-hover:scale-150 transition-all duration-500 hidden md:block"
+        ></div>
+
+        <!-- Project Content -->
+        <div class="w-full md:w-1/2 space-y-6">
+          <!-- Image Container -->
+          <div class="relative aspect-video rounded-xl overflow-hidden group/image">
+            <img
+              :src="project.image"
+              :alt="project.name"
+              class="w-full h-full object-cover transition-all duration-700 group-hover/image:scale-105 grayscale group-hover:grayscale-0"
+            />
             <div
-              class="flex gap-3 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
+              class="absolute inset-0 bg-gradient-to-r from-background/95 to-background/80 opacity-0 group-hover/image:opacity-100 transition-all duration-700"
+            ></div>
+            <!-- Project Links -->
+            <div
+              class="absolute bottom-4 right-4 flex gap-3 opacity-0 translate-y-4 group-hover/image:opacity-100 group-hover/image:translate-y-0 transition-all duration-700 z-10"
             >
               <a
                 v-if="project.github"
                 :href="project.github"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="p-2 rounded-lg bg-gray-800/50 text-gray-400 hover:text-purple-400 hover:bg-gray-800/80 transform hover:-translate-y-1 transition-all duration-300"
-                title="View Source Code"
+                class="p-3 rounded-lg bg-card/50 backdrop-blur-sm text-accent-muted hover:text-accent-light hover:scale-110 transition-all duration-300"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path
@@ -56,9 +85,7 @@
                 v-if="project.demo"
                 :href="project.demo"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="p-2 rounded-lg bg-gray-800/50 text-gray-400 hover:text-blue-400 hover:bg-gray-800/80 transform hover:-translate-y-1 transition-all duration-300"
-                title="View Live Demo"
+                class="p-3 rounded-lg bg-card/50 backdrop-blur-sm text-accent-muted hover:text-accent-light hover:scale-110 transition-all duration-300"
               >
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path
@@ -71,22 +98,40 @@
               </a>
             </div>
           </div>
-          <p class="text-sm text-gray-400 mb-4 line-clamp-2">{{ project.description }}</p>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="tech in project.technologies"
-              :key="tech"
-              class="text-xs font-medium text-gray-400 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50"
-            >
-              {{ tech }}
-            </span>
-          </div>
         </div>
 
-        <!-- Hover Overlay -->
+        <!-- Project Info -->
         <div
-          class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-        ></div>
+          class="w-full md:w-1/2 p-10 bg-card/50 backdrop-blur-sm rounded-xl border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 group-hover:translate-y-[-2px]"
+        >
+          <div class="space-y-8">
+            <!-- Project Header -->
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-xs font-light text-accent-light/60 tracking-widest">
+                Featured Project {{ String(index + 1).padStart(2, '0') }}
+              </span>
+              <h3 class="text-2xl font-light text-accent-light tracking-wide w-full mt-4">
+                {{ project.name }}
+              </h3>
+            </div>
+
+            <!-- Project Description -->
+            <p class="text-accent-muted leading-relaxed">
+              {{ project.description }}
+            </p>
+
+            <!-- Technologies -->
+            <div class="flex flex-wrap gap-2 pt-6">
+              <span
+                v-for="tech in project.technologies"
+                :key="tech"
+                class="text-xs font-light text-accent-muted px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-accent-dark/10 hover:border-accent-light/10 hover:text-accent-light hover:translate-y-[-2px] transition-all duration-300"
+              >
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -96,7 +141,8 @@
 const projects = [
   {
     name: 'Medium',
-    description: 'A Full Stack Blogging Platform',
+    description:
+      'A comprehensive full-stack blogging platform inspired by Medium. Features include rich text editing, user authentication, article publishing with categories and tags, commenting system, and responsive design. Built with performance and scalability in mind using modern web technologies.',
     technologies: ['Express.js', 'Node.js', 'MongoDB', 'TailwindCSS', 'EJS'],
     github: 'https://github.com/jkdevio/Medium-Clone',
     demo: 'https://mediumclone.up.railway.app',
@@ -104,7 +150,8 @@ const projects = [
   },
   {
     name: 'Personal Portfolio',
-    description: 'My Personal Portfolio Website',
+    description:
+      'A modern, minimalist portfolio website showcasing my work and experience. Features smooth animations, responsive design, and optimized performance. Built with Vue.js and TailwindCSS, incorporating modern design principles and best practices for an engaging user experience.',
     technologies: ['Vue.js', 'TailwindCss', 'Vite', 'Node.js'],
     github: 'https://github.com/jkdevio/my-portfolio',
     demo: 'https://jkdevio-portfolio.vercel.app',

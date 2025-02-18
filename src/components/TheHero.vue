@@ -9,31 +9,33 @@
             <img
               src="/profile.jpg"
               alt="Jonathan Kalu"
-              class="w-full aspect-square object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-300"
+              class="w-full aspect-square object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500 scale-[1.01] group-hover:scale-100"
             />
             <div
-              class="absolute inset-0 bg-purple-500/10 group-hover:bg-transparent transition-colors duration-300"
+              class="absolute inset-0 bg-gradient-to-b from-accent-light/5 to-transparent group-hover:opacity-0 transition-all duration-500"
             ></div>
           </div>
 
           <!-- Decorative border -->
           <div
-            class="absolute -inset-2 border-2 border-purple-500/20 rounded-2xl group-hover:-inset-3 transition-all duration-300"
+            class="absolute -inset-2 border border-accent-light/10 rounded-2xl group-hover:-inset-3 transition-all duration-500"
           ></div>
         </div>
       </div>
 
       <!-- Content Container -->
       <div class="w-full md:w-7/12">
-        <p class="text-gray-400 mb-2 text-sm sm:text-base">Hey, I'm</p>
+        <p class="text-accent-muted mb-2 text-sm sm:text-base">Hey, I'm</p>
         <h1 class="text-4xl sm:text-6xl font-bold mb-4">
-          <span class="bg-gradient-to-r from-purple-500 to-purple-700 bg-clip-text text-transparent"
-            >Jonathan</span
-          >
           <span
-            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent ml-2"
-            >Kalu</span
+            class="text-accent-light relative group-hover:opacity-90 transition-all duration-500"
           >
+            Jonathan
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"
+            ></span>
+          </span>
+          <span class="text-accent-muted ml-2">Kalu</span>
         </h1>
         <p class="text-gray-400 mb-8 text-sm sm:text-base leading-relaxed">
           I'm a software developer passionate about building tech-focused platforms that enhance

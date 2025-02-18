@@ -3,8 +3,8 @@
     class="fixed w-full top-0 z-50 transition-all duration-300"
     :class="[
       scrolled
-        ? 'bg-[#121212]/80 backdrop-blur-lg border-gray-800/50'
-        : 'bg-[#121212] border-gray-800',
+        ? 'bg-background/80 backdrop-blur-lg border-accent-dark/10'
+        : 'bg-background border-accent-dark/5',
       'border-b',
     ]"
   >
@@ -12,11 +12,11 @@
       <div class="flex justify-between items-center">
         <!-- Logo -->
         <a href="#" class="text-xl font-bold relative group">
-          <span class="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+          <span class="text-accent-light group-hover:opacity-80 transition-all duration-300"
             >JK</span
           >
           <span
-            class="absolute -inset-x-2 -inset-y-1 group-hover:bg-gray-800/50 rounded-lg transition-all duration-300 opacity-0 group-hover:opacity-100"
+            class="absolute -inset-x-2 -inset-y-1 group-hover:bg-accent-light/5 rounded-lg transition-all duration-500 opacity-0 group-hover:opacity-100"
           ></span>
         </a>
 
@@ -52,30 +52,14 @@
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-4 sm:gap-8">
           <a
-            href="#projects"
-            class="relative text-gray-400 hover:text-gray-200 transition-colors group"
+            v-for="link in navLinks"
+            :key="link.href"
+            :href="link.href"
+            class="relative text-accent-muted hover:text-accent-light transition-all duration-300 group"
           >
-            Projects
+            {{ link.text }}
             <span
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"
-            ></span>
-          </a>
-          <a
-            href="#tools"
-            class="relative text-gray-400 hover:text-gray-200 transition-colors group"
-          >
-            Tools
-            <span
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"
-            ></span>
-          </a>
-          <a
-            href="#contact"
-            class="relative text-gray-400 hover:text-gray-200 transition-colors group"
-          >
-            Contact
-            <span
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300"
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-light/50 group-hover:w-full group-hover:bg-accent-light transition-all duration-500"
             ></span>
           </a>
         </div>
@@ -85,7 +69,7 @@
           <img
             src="/profile.jpg"
             alt="Profile"
-            class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-gray-700 hover:border-gray-500 transition-all duration-300 hover:scale-110"
+            class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-accent-dark/20 hover:border-accent-light/20 transition-all duration-500 hover:scale-110 grayscale hover:grayscale-0"
           />
         </div>
 

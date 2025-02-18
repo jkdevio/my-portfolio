@@ -5,9 +5,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#121212',
-        card: '#1E1E1E',
-        'card-hover': '#2A2A2A',
+        background: '#0A0A0A',
+        card: '#141414',
+        'card-hover': '#1A1A1A',
+        accent: {
+          light: '#FFFFFF',
+          muted: '#A3A3A3',
+          dark: '#404040',
+        },
       },
     },
   },
