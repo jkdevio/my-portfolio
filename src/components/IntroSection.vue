@@ -6,10 +6,10 @@
         <!-- Gradient Orbs -->
         <div class="absolute inset-0 overflow-hidden">
           <div
-            class="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/10 to-transparent rounded-full animate-float"
+            class="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-r from-white/5 to-transparent rounded-full animate-float"
           ></div>
           <div
-            class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-l from-blue-500/10 to-transparent rounded-full animate-float-delayed"
+            class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-l from-white/5 to-transparent rounded-full animate-float-delayed"
           ></div>
         </div>
       </div>
@@ -25,14 +25,15 @@
             :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"
           >
             <span
-              class="block text-gray-800/90 select-none mb-4 hover:scale-105 transition-transform duration-300"
+              class="block text-accent-dark/90 select-none mb-4 hover:scale-105 transition-all duration-500 hover:text-accent-light/10"
             >
               Software
             </span>
-            <span
-              class="block bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent bg-[size:200%] animate-gradient font-black"
-            >
+            <span class="block text-accent-light font-black relative group">
               Developer
+              <span
+                class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"
+              ></span>
             </span>
           </h1>
         </div>
@@ -47,7 +48,7 @@
         >
           <div class="text-gray-400">
             <svg
-              class="w-6 h-6 animate-bounce group-hover:text-purple-500 transition-colors"
+              class="w-6 h-6 animate-bounce group-hover:text-accent-light transition-all duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

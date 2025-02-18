@@ -17,17 +17,17 @@
       <div
         v-for="project in projects"
         :key="project.name"
-        class="group relative bg-[#1A1A1A] rounded-xl overflow-hidden"
+        class="group relative bg-card hover:bg-card-hover rounded-xl overflow-hidden border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500"
       >
         <!-- Card Top -->
         <div class="relative h-64 overflow-hidden">
           <img
             :src="project.image"
             :alt="project.name"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0 grayscale"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-90"
+            class="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-90"
           ></div>
         </div>
 
@@ -76,7 +76,7 @@
             <span
               v-for="tech in project.technologies"
               :key="tech"
-              class="text-xs font-medium text-gray-400 px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50"
+              class="text-xs font-medium text-accent-muted px-3 py-1 rounded-full bg-accent-dark/10 border border-accent-light/5 hover:border-accent-light/10 hover:text-accent-light transition-all duration-300"
             >
               {{ tech }}
             </span>
@@ -85,7 +85,7 @@
 
         <!-- Hover Overlay -->
         <div
-          class="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
         ></div>
       </div>
     </div>

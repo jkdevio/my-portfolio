@@ -17,21 +17,27 @@
       <div
         v-for="tool in tools"
         :key="tool.name"
-        class="group bg-[#1A1A1A] p-4 rounded-xl border border-gray-800/50 hover:border-gray-700/50 transition-all duration-300 cursor-pointer active:scale-95"
+        class="group bg-card hover:bg-card-hover p-4 rounded-xl border border-accent-dark/10 hover:border-accent-light/10 transition-all duration-500 hover:translate-y-[-2px]"
         :class="tool.isAnimating ? 'animate-wiggle' : ''"
         @click="animateTool(tool)"
       >
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center">
+          <div
+            class="w-10 h-10 rounded-lg bg-accent-dark/10 flex items-center justify-center group-hover:bg-accent-dark/20 transition-all duration-500"
+          >
             <img :src="tool.icon" :alt="tool.name" class="w-6 h-6" />
           </div>
           <div>
             <span
-              class="text-sm font-medium text-gray-300 group-hover:text-gray-100 transition-colors"
+              class="text-sm font-medium text-accent-muted group-hover:text-accent-light transition-all duration-300"
             >
               {{ tool.name }}
             </span>
-            <span class="block text-xs text-gray-500">{{ tool.type }}</span>
+            <span
+              class="block text-xs text-accent-dark group-hover:text-accent-muted transition-all duration-300"
+            >
+              {{ tool.type }}
+            </span>
           </div>
         </div>
       </div>
