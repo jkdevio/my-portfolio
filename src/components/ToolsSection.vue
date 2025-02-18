@@ -1,13 +1,28 @@
 <template>
   <section class="py-16 px-4 sm:px-6" id="tools">
     <h2
-      class="text-xl sm:text-2xl font-bold mb-12 uppercase text-gray-200 text-center"
+      class="relative text-4xl sm:text-5xl font-thin mb-24 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
     >
-      Technologies & Tools
+      <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4">STACK</span>
+      <span class="text-accent-light relative">
+        Technologies & Tools
+        <span
+          class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+        ></span>
+      </span>
     </h2>
+    <p
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 text-sm leading-relaxed"
+      v-motion
+      :initial="{ opacity: 0, y: 20 }"
+      :enter="{ opacity: 1, y: 0, delay: 200 }"
+    >
+      The technologies and tools I use to bring ideas to life. My stack is constantly evolving as I
+      explore new ways to create better solutions.
+    </p>
     <div
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
       v-motion

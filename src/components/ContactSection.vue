@@ -9,12 +9,20 @@
 
     <div class="max-w-[1200px] mx-auto">
       <h2
-        class="text-3xl sm:text-4xl font-light mb-16 text-accent-light text-center tracking-tight"
+        class="relative text-4xl sm:text-5xl font-thin mb-24 text-center"
         v-motion
         :initial="{ opacity: 0, y: 100 }"
         :enter="{ opacity: 1, y: 0 }"
       >
-        Let's Connect
+        <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4"
+          >CONTACT</span
+        >
+        <span class="text-accent-light relative">
+          Let's Connect
+          <span
+            class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+          ></span>
+        </span>
       </h2>
 
       <p

@@ -11,13 +11,31 @@
     </div>
 
     <h2
-      class="text-3xl sm:text-4xl font-light mb-16 text-accent-light text-center tracking-tight"
+      class="relative text-4xl sm:text-5xl font-thin mb-24 text-center"
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :enter="{ opacity: 1, y: 0 }"
     >
-      Career Journey
+      <span class="text-accent-muted/50 block text-sm font-light tracking-[0.3em] mb-4"
+        >EXPERIENCE</span
+      >
+      <span class="text-accent-light relative">
+        Career Journey
+        <span
+          class="absolute -bottom-4 left-1/2 w-12 h-px bg-accent-light/20 -translate-x-1/2"
+        ></span>
+      </span>
     </h2>
+
+    <p
+      class="max-w-2xl mx-auto text-accent-muted/80 mt-8 text-sm leading-relaxed"
+      v-motion
+      :initial="{ opacity: 0, y: 20 }"
+      :enter="{ opacity: 1, y: 0, delay: 200 }"
+    >
+      A timeline of my professional journey, highlighting key roles and achievements. Each position
+      has contributed to my growth as a developer and problem solver.
+    </p>
 
     <div class="max-w-3xl mx-auto">
       <div
