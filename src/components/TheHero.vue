@@ -7,7 +7,7 @@
           <!-- Image with overlay -->
           <div class="relative rounded-2xl overflow-hidden">
             <img
-              src="/profile.jpg"
+              src="/profile-2.jpg"
               alt="Jonathan Kalu"
               class="w-full aspect-square object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500 scale-[1.01] group-hover:scale-100"
             />
