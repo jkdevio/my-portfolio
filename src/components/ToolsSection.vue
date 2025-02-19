@@ -95,15 +95,15 @@ const tools = ref([
     isAnimating: false,
   },
   {
-    name: 'Tailwind Css',
+    name: 'Tailwind',
     icon: 'https://img.icons8.com/fluency/48/tailwind_css.png',
     type: 'Framework',
     isAnimating: false,
   },
   {
-    name: 'AWS',
-    icon: 'https://img.icons8.com/color/48/amazon-web-services.png',
-    type: 'Cloud',
+    name: 'Express',
+    icon: 'https://img.icons8.com/ios/50/express-js.png',
+    type: 'Framework',
     isAnimating: false,
   },
   {
