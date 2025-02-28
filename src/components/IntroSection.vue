@@ -1,5 +1,5 @@
 <template>
-  <section class="h-screen relative overflow-hidden">
+  <section class="h-screen relative overflow-hidden" id="home">
     <div class="max-w-[1200px] h-full mx-auto px-4 sm:px-6 flex items-center justify-center">
       <!-- Background Elements -->
       <div class="absolute inset-0">
@@ -27,7 +27,7 @@
             <span
               class="block text-accent-dark/90 select-none mb-6 hover:scale-105 transition-all duration-500 hover:text-accent-light/10"
             >
-              Software
+              Full-Stack
             </span>
             <span class="block text-accent-light font-black relative group">
               Developer
@@ -69,7 +69,7 @@
 
 <script setup>
 const scrollToContent = () => {
-  document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
+  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 

@@ -120,7 +120,16 @@ const experiences = [
     description: [
       'Led the development of a high-performance web application for a healthcare company for keeping track of their patients and their medical records.',
     ],
-    technologies: ['Vue.js', 'Node.JS', 'Git', 'TailwindCSS', 'JavaScript', 'Aws'],
+    technologies: ['Vue.js', 'Node.JS', 'Git', 'TailwindCSS', 'JavaScript', 'MongoDB'],
+  },
+  {
+    company: 'VALLEYNEST GLOBAL RESOURCES LIMITED UK',
+    role: 'Full Stack Developer',
+    duration: '2024 - Present',
+    description: [
+      'Led the development of a high-performance web application for an E-commerce company for keeping track of their products and their sales.',
+    ],
+    technologies: ['Node.js', 'EJS', 'Express.Js', 'TailwindCSS', 'JavaScript', 'MySQL', 'JWT'],
   },
   {
     company: 'Slessor Healthcare UK',
@@ -129,7 +138,7 @@ const experiences = [
     description: [
       'Led the development of a high-performance web application for a healthcare company for keeping track of their mails, records, payroll, and more.',
     ],
-    technologies: ['Node.js', 'EJS', 'Express.Js', 'TailwindCSS', 'JavaScript', 'AWS'],
+    technologies: ['Node.js', 'EJS', 'Express.Js', 'TailwindCSS', 'JavaScript', 'MongoDB'],
   },
   {
     company: 'Upwork',
@@ -149,7 +158,7 @@ const experiences = [
       'Aws',
       'MongoDB',
       'MySQL',
-      'PostgreSQL',
+      'JWT',
     ],
   },
 ]
