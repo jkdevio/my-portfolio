@@ -27,7 +27,7 @@
             <span
               class="block text-accent-dark/90 select-none mb-6 hover:scale-105 transition-all duration-500 hover:text-accent-light/10"
             >
-              Software
+              Full-Stack
             </span>
             <span class="block text-accent-light font-black relative group">
               Developer
