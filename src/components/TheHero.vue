@@ -1,5 +1,5 @@
 <template>
-  <section id="hero" class="pt-24 sm:pt-32 pb-8 sm:pb-16 px-4 sm:px-6">
+  <section id="about" class="pt-24 sm:pt-32 pb-8 sm:pb-16 px-4 sm:px-6">
     <div class="flex flex-col md:flex-row items-center gap-12">
       <!-- Image Container -->
       <div class="w-full md:w-5/12">

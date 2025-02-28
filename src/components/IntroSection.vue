@@ -1,5 +1,5 @@
 <template>
-  <section class="h-screen relative overflow-hidden">
+  <section class="h-screen relative overflow-hidden" id="home">
     <div class="max-w-[1200px] h-full mx-auto px-4 sm:px-6 flex items-center justify-center">
       <!-- Background Elements -->
       <div class="absolute inset-0">
@@ -69,7 +69,7 @@
 
 <script setup>
 const scrollToContent = () => {
-  document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })
+  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 

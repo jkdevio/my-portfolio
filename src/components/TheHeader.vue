@@ -50,32 +50,36 @@
         </button>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-4 sm:gap-8">
-          <a
-            v-for="link in navLinks"
-            :key="link.href"
-            :href="link.href"
-            @click="isMenuOpen = false"
-            class="relative text-accent-muted hover:text-accent-light transition-all duration-300 group flex items-center gap-2"
+        <div class="hidden md:flex items-center">
+          <div
+            class="flex items-center bg-card/50 backdrop-blur-sm rounded-full border border-accent-dark/10"
           >
-            <svg
-              class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
+            <a
+              v-for="link in navLinks"
+              :key="link.href"
+              :href="link.href"
+              @click="isMenuOpen = false"
+              class="relative px-4 py-2 text-sm text-accent-muted hover:text-accent-light transition-all duration-300 group flex items-center gap-2"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" :d="link.icon" />
-            </svg>
-            {{ link.text }}
-            <span
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-light/50 group-hover:w-full group-hover:bg-accent-light transition-all duration-500"
-            ></span>
-          </a>
+              <svg
+                class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-all duration-300"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" :d="link.icon" />
+              </svg>
+              {{ link.text }}
+              <span
+                class="absolute inset-0 bg-accent-light/5 rounded-full scale-0 group-hover:scale-100 transition-all duration-500"
+              ></span>
+            </a>
+          </div>
         </div>
 
         <!-- Profile Picture -->
-        <div class="hidden md:flex items-center">
+        <div class="hidden md:flex items-center ml-6">
           <img
             src="/profile.jpg"
             alt="Profile"
