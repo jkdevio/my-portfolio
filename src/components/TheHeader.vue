@@ -82,16 +82,29 @@
           :enter="{ opacity: 1, y: 0 }"
           :leave="{ opacity: 0, y: -20 }"
         >
-          <div class="p-4 space-y-4">
-            <a href="#projects" class="block text-gray-400 hover:text-gray-200 transition-colors"
-              >Projects</a
+          <div class="p-6 space-y-6">
+            <!-- Profile Picture in Mobile Menu -->
+            <div class="flex items-center gap-4 pb-4 border-b border-gray-800/50">
+              <img
+                src="/profile.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full object-cover border border-accent-dark/20 hover:border-accent-light/20 transition-all duration-500 hover:scale-110 grayscale hover:grayscale-0"
+              />
+              <div>
+                <h3 class="text-accent-light font-light">Jonathan Kalu</h3>
+                <p class="text-sm text-accent-muted">Full-Stack Developer</p>
+              </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <a
+              v-for="link in navLinks"
+              :key="link.href"
+              :href="link.href"
+              class="block text-accent-muted hover:text-accent-light transition-all duration-300 py-2"
             >
-            <a href="#tools" class="block text-gray-400 hover:text-gray-200 transition-colors"
-              >Tools</a
-            >
-            <a href="#contact" class="block text-gray-400 hover:text-gray-200 transition-colors"
-              >Contact</a
-            >
+              {{ link.text }}
+            </a>
           </div>
         </div>
       </div>
