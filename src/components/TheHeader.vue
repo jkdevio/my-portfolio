@@ -55,8 +55,17 @@
             v-for="link in navLinks"
             :key="link.href"
             :href="link.href"
-            class="relative text-accent-muted hover:text-accent-light transition-all duration-300 group"
+            class="relative text-accent-muted hover:text-accent-light transition-all duration-300 group flex items-center gap-2"
           >
+            <svg
+              class="w-4 h-4 opacity-50 group-hover:opacity-100 transition-all duration-300"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" :d="link.icon" />
+            </svg>
             {{ link.text }}
             <span
               class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-light/50 group-hover:w-full group-hover:bg-accent-light transition-all duration-500"
@@ -101,8 +110,17 @@
               v-for="link in navLinks"
               :key="link.href"
               :href="link.href"
-              class="block text-accent-muted hover:text-accent-light transition-all duration-300 py-2"
+              class="flex items-center gap-3 text-accent-muted hover:text-accent-light transition-all duration-300 py-3 px-2 rounded-lg hover:bg-accent-light/5"
             >
+              <svg
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" :d="link.icon" />
+              </svg>
               {{ link.text }}
             </a>
           </div>
@@ -117,6 +135,29 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMenuOpen = ref(false)
 const scrolled = ref(false)
+
+const navLinks = [
+  {
+    href: '#projects',
+    text: 'Projects',
+    icon: 'M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605',
+  },
+  {
+    href: '#tools',
+    text: 'Tools',
+    icon: 'M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z',
+  },
+  {
+    href: '#experience',
+    text: 'Experience',
+    icon: 'M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z',
+  },
+  {
+    href: '#contact',
+    text: 'Contact',
+    icon: 'M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75',
+  },
+]
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20
